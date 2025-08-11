@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 
 import userRoutes from './routes/users.route.js';
 import categoriesRoutes from './routes/category.route.js';
+import tasksRoutes from './routes/task.route.js';
 
 dotenv.config();
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.json());
 // routes
 app.use('/api/users', userRoutes);
 app.use('/api/categories', categoriesRoutes);
+app.use('/api/tasks', tasksRoutes);
 
 // connect DB and server
 mongoose.connect(process.env.MONGO_URI)
